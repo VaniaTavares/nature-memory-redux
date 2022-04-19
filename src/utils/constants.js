@@ -1,11 +1,11 @@
 import { images } from "../assets";
 export const gameLevels = {
   easy: {
-    maxIndex: 7,
+    maxIndex: 6,
     gameLenght: 6,
   },
   medium: {
-    maxIndex: 4,
+    maxIndex: 3,
     gameLenght: 9,
   },
   hard: {
@@ -15,5 +15,5 @@ export const gameLevels = {
 };
 
 export const fullBoard = Object.keys(images).map((image) => {
-  return { content: image, visible: true, matched: true };
+  return { name: image, content: images[image], visible: true, matched: true };
 });
