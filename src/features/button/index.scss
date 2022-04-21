@@ -1,0 +1,16 @@
+@mixin default-button($color, $bg-color) {
+  padding: 0.25rem 0.35rem;
+  margin: 0.5rem 0;
+  color: $color;
+  background-color: $bg-color;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.btn {
+  @include default-button(rgb(189, 152, 250), rgb(73, 13, 169));
+}
+
+.btn__reset {
+  @include default-button(rgb(73, 13, 169), rgb(189, 152, 250));
+}

@@ -1,12 +1,14 @@
 import React from "react";
-
-import Button from "./features/button";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Game from "./pages/Game";
 
 function App() {
   return (
-    <div className="App">
-      <Button />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/game" element={<Game />} />
+    </Routes>
   );
 }
 
