@@ -19,7 +19,7 @@ code {
 }
 
 h2 {
-  color: rgb(73, 13, 169);
+  color: rgb(106, 25, 238);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -28,5 +28,40 @@ p {
 }
 
 .p__highlight {
-  color: rgb(73, 13, 169);
+  color: rgb(59, 11, 136);
+}
+
+#root {
+  min-height: 100vh;
+  background: rgb(59, 11, 136);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 11, 136, 1) 9%,
+    rgb(88, 18, 201) 25%,
+    rgba(160, 102, 253, 1) 56%,
+    rgb(88, 18, 201) 82%,
+    rgba(59, 11, 136, 1) 95%
+  );
+  padding-block-end: 2rem;
+  background-size: 350%;
+  animation: background 30s ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: -200%;
+  }
+  25% {
+    background-position: -150%;
+  }
+  50% {
+    background-position: -100%;
+  }
+  75% {
+    background-position: -150%;
+  }
+  100% {
+    background-position: -200%;
+  }
 }

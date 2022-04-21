@@ -8,9 +8,9 @@
 }
 
 .btn {
-  @include default-button(rgb(189, 152, 250), rgb(73, 13, 169));
+  @include default-button(rgb(189 152 250), rgb(59, 11, 136));
 }
 
 .btn__reset {
-  @include default-button(rgb(73, 13, 169), rgb(189, 152, 250));
+  @include default-button(rgb(59, 11, 136), rgb(179, 134, 253));
 }

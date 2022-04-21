@@ -6,7 +6,6 @@ import "./index.scss";
 const Game = () => {
   return (
     <div className="app__game">
-      <h2>Game Section</h2>
       <section>
         <LevelDisplay />
         <ScoreInfo />
