@@ -1,12 +1,43 @@
 import React from "react";
-import { overlay, images } from "../../../assets";
-import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  matchedCardsSelector,
+  resetCards,
+  showCards,
+  visibleCardsSelector,
+} from "../gameBoardSlice";
+import { updateMoves } from "../../score/scoreSlice";
+import { overlay } from "../../../assets";
+import "../index.scss";
 
-const GameCard = () => {
+const GameCard = ({ id, image, name }) => {
+  const visibleCards = useSelector(visibleCardsSelector);
+  const matchedCards = useSelector(matchedCardsSelector);
+  let currentClass = "card__front";
+  let coverClass = "";
+
+  const dispatch = useDispatch();
+  const flipCard = (providedId) => {
+    if (visibleCards.length === 2) {
+      dispatch(resetCards());
+    }
+    dispatch(showCards({ id: providedId, name }));
+    dispatch(updateMoves());
+  };
+
+  if (visibleCards.includes(id) || matchedCards.includes(id)) {
+    if (matchedCards.includes(id)) {
+      currentClass = "card__front__show-matched";
+    } else {
+      currentClass = "card__front__show";
+    }
+    coverClass = "card__cover";
+  }
+
   return (
-    <div className="gamecard">
-      <img src={images.coral} alt="coral" className="card__front" />
-      <img src={overlay.cover} alt="cover" className="card__cover" />
+    <div className="gamecard" onClick={() => flipCard(id)}>
+      <img src={image} alt={name} className={currentClass} />
+      <img src={overlay.cover} alt="cover" className={coverClass} />
     </div>
   );
 };

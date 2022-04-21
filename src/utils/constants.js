@@ -15,5 +15,10 @@ export const gameLevels = {
 };
 
 export const fullBoard = Object.keys(images).map((image) => {
-  return { name: image, content: images[image], visible: true, matched: true };
+  return {
+    name: image,
+    content: images[image],
+    visible: false,
+    matched: false,
+  };
 });

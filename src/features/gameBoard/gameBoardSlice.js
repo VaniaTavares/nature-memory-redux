@@ -8,21 +8,36 @@ const gameBoardSlice = createSlice({
   initialState,
   reducers: {
     setBoard: (state, action) => {
-      return action.payload.newSet.map((card, index) => {
-        return { ...card, visible: false, matched: false, id: index };
+      return action.payload.newSet.map((card) => {
+        return { ...card, visible: false, matched: false };
       });
     },
     showCards: (state, action) => {
-      const newState = state.map((card, index) => {
-        return index === action.payload.id ? { ...card, visible: true } : card;
+      const [mapped] = state
+        .filter((card) => card.visible)
+        .map((card) => {
+          return {
+            name: card.name,
+            id: card.id,
+          };
+        });
+      let newState = [...state];
+      newState = newState.map((card, index) => {
+        if (
+          index === action.payload.id &&
+          mapped?.name === action.payload.name
+        ) {
+          return { ...card, matched: true, visible: true };
+        } else if (index === action.payload.id) {
+          return { ...card, visible: true };
+        } else return card;
       });
-      const checkMatch = newState.filter((card) => card.visible);
-      if (
-        checkMatch.length > 1 &&
-        checkMatch[0].content === checkMatch[1].content
-      ) {
-        checkMatch.forEach(({ id }) => (newState[id].matched = true));
+      if (mapped?.name === action.payload.name) {
+        newState = newState.map((card) => {
+          return card.id === mapped.id ? { ...card, matched: true } : card;
+        });
       }
+      return newState;
     },
     resetCards: (state, action) => {
       return state.map((card) => {
@@ -33,6 +48,12 @@ const gameBoardSlice = createSlice({
 });
 
 export const gameBoardSelector = (state) => state.gameBoard;
+
+export const visibleCardsSelector = (state) =>
+  state.gameBoard.filter((card) => card.visible).map((card) => card.id);
+
+export const matchedCardsSelector = (state) =>
+  state.gameBoard.filter((card) => card.matched).map((card) => card.id);
 
 export const { setBoard, showCards, resetCards } = gameBoardSlice.actions;
 

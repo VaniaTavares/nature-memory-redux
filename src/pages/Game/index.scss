@@ -1,0 +1,23 @@
+.app__game {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    padding: 1rem 0 0 1rem;
+    align-self: flex-start;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5rem 2rem;
+
+    @media screen and (min-width: 1000px) {
+      width: 80%;
+    }
+  }
+}

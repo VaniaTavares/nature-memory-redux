@@ -1,0 +1,11 @@
+.app__home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border: rgb(73, 13, 169);
+  background-color: rgba(73, 13, 169, 0.2);
+  width: max-content;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem;
+}
