@@ -18,11 +18,14 @@ const GameCard = ({ id, image, name }) => {
 
   const dispatch = useDispatch();
   const flipCard = (providedId) => {
-    if (visibleCards.length === 2) {
-      dispatch(resetCards());
-    }
-    dispatch(showCards({ id: providedId, name }));
-    dispatch(updateMoves());
+    if (!visibleCards.includes(id) && !matchedCards.includes(id)) {
+      if (visibleCards.length === 2) {
+        dispatch(resetCards());
+      } else if (visibleCards.length === 1) {
+        dispatch(updateMoves());
+      }
+      dispatch(showCards({ id: providedId, name }));
+    } else return null;
   };
 
   if (visibleCards.includes(id) || matchedCards.includes(id)) {

@@ -8,7 +8,7 @@ import { resetMoves } from "../score/scoreSlice";
 
 import "./index.scss";
 
-const Button = ({ shuffle }) => {
+const Button = ({ shuffle, text, closePortal }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const currentSet = useSelector(gameBoardSelector);
@@ -20,16 +20,19 @@ const Button = ({ shuffle }) => {
       newSet = shuffleArray(currentSet);
     } else {
       newSet = boardPreparation(currentLevel);
+      if (text === "New Game") {
+        closePortal();
+      }
     }
     dispatch(resetMoves());
     dispatch(setBoard({ newSet }));
-    if (!shuffle) {
+    if (!shuffle && !text) {
       navigate("/game");
     }
   };
   return (
     <button className={shuffle ? "btn__reset" : "btn"} onClick={handleGameSet}>
-      {shuffle ? "Restart" : "Play"}
+      {text ? text : shuffle ? "Restart" : "Play"}
     </button>
   );
 };

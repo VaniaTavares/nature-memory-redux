@@ -3,9 +3,10 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  border: rgb(73, 13, 169);
-  background-color: rgba(73, 13, 169, 0.2);
   width: max-content;
-  margin: 2rem auto 0 auto;
+  min-height: 300px;
+  margin: 0 auto;
   padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
 }

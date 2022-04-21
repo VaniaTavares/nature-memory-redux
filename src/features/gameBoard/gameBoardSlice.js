@@ -16,10 +16,12 @@ const gameBoardSlice = createSlice({
       const [mapped] = state
         .filter((card) => card.visible)
         .map((card) => {
-          return {
-            name: card.name,
-            id: card.id,
-          };
+          return card.id === action.payload.id
+            ? null
+            : {
+                name: card.name,
+                id: card.id,
+              };
         });
       let newState = [...state];
       newState = newState.map((card, index) => {

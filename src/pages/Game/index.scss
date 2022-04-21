@@ -10,13 +10,9 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
     padding: 0.5rem 2rem;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-
-    @media screen and (min-width: 1000px) {
-      width: 80%;
-    }
+    width: 80%;
   }
 }

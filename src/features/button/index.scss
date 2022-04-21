@@ -1,5 +1,5 @@
 @mixin default-button($color, $bg-color) {
-  padding: 0.25rem 0.35rem;
+  padding: 0.3rem 0.5rem;
   margin: 0.5rem 0;
   color: $color;
   background-color: $bg-color;
@@ -12,5 +12,5 @@
 }
 
 .btn__reset {
-  @include default-button(rgb(59, 11, 136), rgb(179, 134, 253));
+  @include default-button(rgb(59, 11, 136), rgba(160, 102, 253));
 }

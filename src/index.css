@@ -42,7 +42,7 @@ p {
     rgb(88, 18, 201) 82%,
     rgba(59, 11, 136, 1) 95%
   );
-  padding-block-end: 2rem;
+  padding: 7vh 0 3vh 0;
   background-size: 350%;
   animation: background 30s ease-out;
   animation-iteration-count: infinite;

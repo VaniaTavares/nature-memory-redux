@@ -5,7 +5,6 @@ const scoreSlice = createSlice({
   initialState: 0,
   reducers: {
     updateMoves: (state) => {
-      console.log(state);
       return state + 1;
     },
     resetMoves: (_state) => {
