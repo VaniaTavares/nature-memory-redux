@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { levelSelector } from "./levelSlice";
 
-const LevelDisplay = () => {
+const LevelDisplay = ({ current }) => {
   const currentLevel = useSelector(levelSelector);
   return (
     <article>
-      Level{" "}
+      {current ? "Current Level" : "Level"}{" "}
       {currentLevel.substring(0, 1).toUpperCase() + currentLevel.substring(1)}
     </article>
   );

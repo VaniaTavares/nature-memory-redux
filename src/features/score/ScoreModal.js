@@ -15,7 +15,7 @@ const ScoreModal = ({ average, open, closePortal }) => {
             ? "Next time will be better for sure!"
             : "Congratulations, you paired all images!"}
         </h4>
-        <LevelForm />
+        <LevelForm current={true} />
         <Button text="New Game" closePortal={closePortal} />
       </div>
     </>,
