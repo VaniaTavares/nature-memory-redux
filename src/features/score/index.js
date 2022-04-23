@@ -17,15 +17,15 @@ const ScoreInfo = () => {
 
   useEffect(() => {
     if (matched.length === total.length) {
-      console.log("here");
-      setOpenPortal(true);
+      setTimeout(() => setOpenPortal(true), 1000);
     }
   }, [matched, total]);
   return (
     <>
-      <article>{moves} moves</article>
+      <article className="p__highlight">{moves} moves</article>
       <article>
-        {matched.length / 2} pairs of {total.length / 2}
+        <span className="p__highlight">{matched.length / 2}</span> pairs of{" "}
+        {total.length / 2}
       </article>
       <ScoreModal
         average={moves > total.length}
