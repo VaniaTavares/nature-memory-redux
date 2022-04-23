@@ -10,6 +10,7 @@ export const shuffleArray = (array) => {
 };
 
 export const boardPreparation = (level) => {
+  if (!level || !["easy", "medium", "hard"].includes(level)) return null;
   const randomIndex = Math.floor(Math.random() * gameLevels[level].maxIndex);
   const newSet = [...fullBoard].splice(
     randomIndex,

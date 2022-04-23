@@ -20,8 +20,12 @@ const Button = ({ shuffle, text, closePortal }) => {
       newSet = shuffleArray(currentSet);
     } else {
       newSet = boardPreparation(currentLevel);
-      if (text === "New Game") {
-        closePortal();
+      if (newSet === null) {
+        navigate("/");
+      } else {
+        if (text === "New Game") {
+          closePortal();
+        }
       }
     }
     dispatch(resetMoves());
@@ -31,7 +35,11 @@ const Button = ({ shuffle, text, closePortal }) => {
     }
   };
   return (
-    <button className={shuffle ? "btn__reset" : "btn"} onClick={handleGameSet}>
+    <button
+      className={shuffle ? "btn__reset" : "btn"}
+      onClick={handleGameSet}
+      disabled={!currentLevel}
+    >
       {text ? text : shuffle ? "Restart" : "Play"}
     </button>
   );

@@ -29,6 +29,7 @@ p {
 
 .p__highlight {
   color: rgb(59, 11, 136);
+  font-weight: 600;
 }
 
 #root {
