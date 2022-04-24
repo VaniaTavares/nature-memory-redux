@@ -1,0 +1,25 @@
+.app__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.5vh;
+  text-align: center;
+  padding-block-start: 0.75vh;
+  background: rgba(59, 11, 136, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgb(200, 167, 255);
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 1.75rem;
+}
+
+@media screen and (min-width: 380px) {
+  .app__header {
+    font-size: 2.25rem;
+  }
+}
