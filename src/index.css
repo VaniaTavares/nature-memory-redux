@@ -47,6 +47,7 @@ p {
   background-size: 350%;
   animation: background 30s ease-out;
   animation-iteration-count: infinite;
+  position: relative;
 }
 
 @keyframes background {
