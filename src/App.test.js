@@ -11,5 +11,5 @@ test("renders react component", () => {
     </Provider>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(getByText("Nature Memory")).toBeInTheDocument();
 });

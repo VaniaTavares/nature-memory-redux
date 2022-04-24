@@ -1,18 +1,17 @@
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import Game from "./pages/Game";
+import { BrowserRouter } from "react-router-dom";
+import AnimatedRoutes from "./app/routes";
 import { AnimatePresence } from "framer-motion";
+import "./App.css";
 
 function App() {
-  const location = useLocation();
   return (
-    <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
-      </Routes>
-    </AnimatePresence>
+    <BrowserRouter>
+      <h1 className="app__header">Nature Memory</h1>
+      <AnimatePresence>
+        <AnimatedRoutes />
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 
